@@ -14,10 +14,8 @@ package jenkins.plugins.coverity.ws;
 import java.io.PrintStream;
 import java.util.List;
 
-import javax.annotation.Nonnull;
-
 import org.apache.commons.lang.StringUtils;
-
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.model.Run;
 import jenkins.model.Jenkins;
 import jenkins.plugins.coverity.CIMInstance;
@@ -34,7 +32,7 @@ public class ViewIssuesReader {
     private PrintStream outputLogger;
     private CoverityViewResultsPublisher publisher;
 
-    public ViewIssuesReader(@Nonnull Run<?, ?> run, PrintStream outputLogger, CoverityViewResultsPublisher publisher) {
+    public ViewIssuesReader(@NonNull Run<?, ?> run, PrintStream outputLogger, CoverityViewResultsPublisher publisher) {
         this.run = run;
         this.outputLogger = outputLogger;
         this.publisher = publisher;

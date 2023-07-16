@@ -13,8 +13,7 @@ package jenkins.plugins.coverity;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import javax.annotation.Nonnull;
-
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.AbortException;
 import org.apache.commons.lang.StringUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -50,7 +49,7 @@ public class CoverityViewResultsPublisher extends Recorder implements SimpleBuil
     }
 
     @Override
-    public void perform(@Nonnull Run<?, ?> run, @Nonnull FilePath workspace, @Nonnull Launcher launcher, @Nonnull TaskListener listener) throws IOException {
+    public void perform(@NonNull Run<?, ?> run, @NonNull FilePath workspace, @NonNull Launcher launcher, @NonNull TaskListener listener) throws IOException {
         final PrintStream logger = listener.getLogger();
         logger.println("[Coverity] Publish Coverity View Results { "+
             "connectInstance:'" + connectInstance + "', " +

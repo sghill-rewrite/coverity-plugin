@@ -15,8 +15,8 @@ import com.sun.xml.wss.XWSSProcessor;
 import com.sun.xml.wss.XWSSProcessorFactory;
 import com.sun.xml.wss.XWSSecurityException;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import edu.umd.cs.findbugs.annotations.PostConstruct;
+import edu.umd.cs.findbugs.annotations.PreDestroy;
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.callback.UnsupportedCallbackException;

@@ -10,6 +10,7 @@
  *******************************************************************************/
 package jenkins.plugins.coverity.CoverityTool;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.EnvVars;
 import hudson.FilePath;
 import hudson.Launcher;
@@ -19,7 +20,6 @@ import jenkins.plugins.coverity.*;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 
-import javax.annotation.Nonnull;
 import java.net.URL;
 
 public abstract class CoverityCommand extends Command {
@@ -33,7 +33,7 @@ public abstract class CoverityCommand extends Command {
     private static final String portArg = "--port";
     private static final String hostArg = "--host";
 
-    public CoverityCommand(@Nonnull String command, AbstractBuild<?, ?> build, Launcher launcher, TaskListener listener, CoverityPublisher publisher, String home, EnvVars envVars) {
+    public CoverityCommand(@NonNull String command, AbstractBuild<?, ?> build, Launcher launcher, TaskListener listener, CoverityPublisher publisher, String home, EnvVars envVars) {
         super(build, launcher, listener, publisher, envVars);
 
         Validate.notEmpty(command, "Command cannot be null empty or null");

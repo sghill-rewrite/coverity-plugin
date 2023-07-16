@@ -10,6 +10,7 @@
  *******************************************************************************/
 package jenkins.plugins.coverity.CoverityTool;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.EnvVars;
 import hudson.Launcher;
 import hudson.model.AbstractBuild;
@@ -17,7 +18,6 @@ import hudson.model.TaskListener;
 import jenkins.plugins.coverity.*;
 import org.apache.commons.lang.Validate;
 
-import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +32,11 @@ public abstract class Command {
     protected EnvVars envVars;
 
     public Command(
-            @Nonnull AbstractBuild<?, ?> build,
-            @Nonnull Launcher launcher,
-            @Nonnull TaskListener listener,
-            @Nonnull CoverityPublisher publisher,
-            @Nonnull EnvVars envVars) {
+            @NonNull AbstractBuild<?, ?> build,
+            @NonNull Launcher launcher,
+            @NonNull TaskListener listener,
+            @NonNull CoverityPublisher publisher,
+            @NonNull EnvVars envVars) {
         Validate.notNull(build, AbstractBuild.class.getName() + " object cannot be null");
         Validate.notNull(launcher, Launcher.class.getName() + " object cannot be null");
         Validate.notNull(listener, TaskListener.class.getName() + " object cannot be null");

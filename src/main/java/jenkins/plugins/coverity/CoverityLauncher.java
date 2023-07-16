@@ -10,6 +10,7 @@
  *******************************************************************************/
 package jenkins.plugins.coverity;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.EnvVars;
 import hudson.FilePath;
 import hudson.Launcher;
@@ -22,7 +23,6 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 
-import javax.annotation.Nonnull;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -207,7 +207,7 @@ public class CoverityLauncher extends Launcher {
      *
      * Notice this variable must be resolved before running cov-build. Also this method creates necessary directories.
      */
-    public void setupIntermediateDirectory(@Nonnull AbstractBuild<?,?> build, @Nonnull TaskListener listener, @Nonnull Node node){
+    public void setupIntermediateDirectory(@NonNull AbstractBuild<?,?> build, @NonNull TaskListener listener, @NonNull Node node){
         Validate.notNull(build, AbstractBuild.class.getName() + " object can't be null");
         Validate.notNull(listener, TaskListener.class.getName() + " object can't be null");
         Validate.notNull(node, Node.class.getName() + " object can't be null");

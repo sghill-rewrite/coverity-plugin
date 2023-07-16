@@ -10,6 +10,7 @@
  *******************************************************************************/
 package jenkins.plugins.coverity;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
 import hudson.Launcher;
 import hudson.model.AbstractBuild;
@@ -20,7 +21,6 @@ import hudson.model.Run;
 import hudson.model.TaskListener;
 import hudson.model.listeners.RunListener;
 
-import javax.annotation.Nonnull;
 import java.io.IOException;
 
 /**
@@ -30,7 +30,7 @@ import java.io.IOException;
 @Extension
 public class CoverityRunListener extends RunListener<Run> {
     @Override
-    public void onCompleted(Run run, @Nonnull TaskListener listener) {
+    public void onCompleted(Run run, @NonNull TaskListener listener) {
         super.onCompleted(run, listener);
     }
 

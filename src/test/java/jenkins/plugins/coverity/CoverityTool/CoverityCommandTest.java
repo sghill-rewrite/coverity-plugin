@@ -11,6 +11,7 @@
 
 package jenkins.plugins.coverity.CoverityTool;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.EnvVars;
 import hudson.FilePath;
 import hudson.Launcher;
@@ -23,7 +24,6 @@ import org.apache.commons.lang.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.annotation.Nonnull;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
@@ -92,7 +92,7 @@ public class CoverityCommandTest {
 
     public static class TestableCoverityCommand extends CoverityCommand{
 
-        public TestableCoverityCommand(@Nonnull String command, AbstractBuild<?, ?> build,
+        public TestableCoverityCommand(@NonNull String command, AbstractBuild<?, ?> build,
                                        Launcher launcher, TaskListener listener, CoverityPublisher publisher,
                                        String home, EnvVars envVars) {
             super(command, build, launcher, listener, publisher, home, envVars);

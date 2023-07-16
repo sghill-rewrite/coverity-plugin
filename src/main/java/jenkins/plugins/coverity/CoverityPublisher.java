@@ -16,7 +16,7 @@ import com.cloudbees.plugins.credentials.common.StandardListBoxModel;
 import com.cloudbees.plugins.credentials.common.StandardUsernamePasswordCredentials;
 import com.cloudbees.plugins.credentials.domains.DomainRequirement;
 import com.coverity.ws.v9.CovRemoteServiceException_Exception;
-
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
 import hudson.FilePath;
 import hudson.Launcher;
@@ -39,8 +39,7 @@ import org.apache.commons.lang.StringUtils;
 import org.kohsuke.stapler.*;
 import org.kohsuke.stapler.bind.JavaScriptMethod;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.xml.ws.WebServiceException;
@@ -511,7 +510,7 @@ public class CoverityPublisher extends Recorder {
         }
 
         @Override
-        public Publisher newInstance(@CheckForNull StaplerRequest req, @Nonnull JSONObject formData) throws FormException {
+        public Publisher newInstance(@CheckForNull StaplerRequest req, @NonNull JSONObject formData) throws FormException {
             logger.info(formData.toString());
 
             // even though request is always non-null, needs check (see note on Descriptor.newInstance)
